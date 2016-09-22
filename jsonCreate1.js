@@ -7,7 +7,11 @@ const rl = readline.createInterface({
 });
 var header;
 var jsObj;
+var i;
+
+var country = [];
 var jsonResult = {};
+var mainObject = [];
 
 var asian=["Arab World","Afghanistan","Armenia","Azerbaijan","Bahrain","Bangladesh","Bhutan","Brunei Darussalam"
             ,"Cambodia","China","Cyprus","Egypt Arab Rep.","India","Indonesia","Iran Islamic Rep.","Iraq","Israel"
@@ -15,6 +19,10 @@ var asian=["Arab World","Afghanistan","Armenia","Azerbaijan","Bahrain","Banglade
             ,"Lebanon","Malaysia","Maldives","Mongolia","Myanmar","Nepal","Oman","Pakistan","Philippines","Qatar"
             ,"Saudi Arabia","Singapore","Sri Lanka","Syrian Arab Republic","Tajikistan","Thailand","Timor-Leste"
             ,"Turkmenistan","United Arab Emirates","Uzbekistan","Vietnam","Yemen Rep."];
+var country = [];
+var female = [];
+var  male = [];
+
 var countryName;
 var year;
 
@@ -41,69 +49,78 @@ rl.on('line', function (line) {
 
 //If country doesn't exist , add the country as key
 if(asian.indexOf(countryName) >= 0) {
-    if(!(countryName in jsonResult)) {
+    if(country.indexOf(countryName) < 0) {
       //create object with country as key
-      jsonResult[countryName] = {};
+      country.push(countryName);
+      jsonResult = {};
+      jsonResult["Country"] = countryName;
+
+
+
+      mainObject.push(jsonResult);
     }
-
-
-//If the year doesn't exist , add the year as key
-/*
-    if(!(year in jsonResult[countryName])) {
-      //Create object with year as key
-      jsonResult[countryName][year] = {};
-    }
-*/
-
 
     if(jsObj[3]=="SP.DYN.LE00.FE.IN" || jsObj[3]=="SP.DYN.LE00.MA.IN") {
 
-      if(jsObj[3]=="SP.DYN.LE00.FE.IN") {
-        indCode = "female";
-        if(!(indCode in jsonResult[countryName])) {
-          //Create object with 'indicator name' as key
-          jsonResult[countryName][indCode] = jsObj[5];
+
+    for (i = 0 ; i < mainObject.length ; i++) {
+
+      if(mainObject[i]["Country"] == countryName) {
+        jsonResult = mainObject[i];
+
+        if(jsObj[3]=="SP.DYN.LE00.FE.IN") {
+          indCode = "Female";
+          if(!(indCode in jsonResult)) {
+            //Create object with 'indicator name' as key
+            jsonResult[indCode] = 0;
+            jsonResult["YearsF"] = 0;
+          }
+
+          femaleTotal = parseFloat(jsonResult[indCode]) + parseFloat(jsObj[5]);
+          //femaleTotal += parseFloat(jsObj[5]);
+          jsonResult[indCode] = femaleTotal;
+          yearsf = parseInt(jsonResult["YearsF"]) + 1;
+          jsonResult["YearsF"] = yearsf;
+
+        }else if(jsObj[3]=="SP.DYN.LE00.MA.IN") {
+          indCode = "Male";
+          if(!(indCode in jsonResult)) {
+            //Create object with 'indicator name' as key
+            jsonResult[indCode] = 0;
+            jsonResult["YearsM"] = 0;
+          }
+
+          maleTotal = parseFloat(jsonResult[indCode]);
+          maleTotal += parseFloat(jsObj[5]);
+          jsonResult[indCode] = maleTotal;
+          yearsm = parseInt(jsonResult["YearsM"]) + 1;
+          jsonResult["YearsM"] = yearsm;
+
         }
 
-        femaleTotal = parseFloat(jsonResult[countryName][indCode]);
-        femaleTotal += parseFloat(jsObj[5]);
-        jsonResult[countryName][indCode] = femaleTotal;
 
-      }else if(jsObj[3]=="SP.DYN.LE00.MA.IN") {
-        indCode = "male";
-        if(!(indCode in jsonResult[countryName])) {
-          //Create object with 'indicator name' as key
-          jsonResult[countryName][indCode] = jsObj[5];
-        }
+  }
 
-        maleTotal = parseFloat(jsonResult[countryName][indCode]);
-        maleTotal += parseFloat(jsObj[5]);
-        jsonResult[countryName][indCode] = maleTotal;
-
-
-      }
-
-      if(!(indCode in jsonResult[countryName])) {
-        //Create object with 'indicator name' as key
-        jsonResult[countryName][indCode] = jsObj[5];
-      }
-
-
+}
 
     }
   }
 }
 });
 
+function calculateAverage(arr) {
+  for(k=0 ; k < arr.length ; k++) {
+    arr[k]["Female"] = parseFloat((arr[k]["Female"])/(arr[k]["YearsF"]));
+    arr[k]["Male"] = parseFloat((arr[k]["Male"])/(arr[k]["YearsM"]));
+
+  }
+}
+
+
 rl.on('close' , function() {
 
+calculateAverage(mainObject);
 var outputFilename = 'outputJson1.json';
-fs.writeFileSync(outputFilename,JSON.stringify(jsonResult,null,4),'utf-8');
-/*fs.writeFile(outputFilename, JSON.stringify(jsonResult, null, 4), function(err) {
-    if(err) {
-      console.log(err);
-    } else {
-      console.log("JSON output file: " + outputFilename);
-    }
-  });*/
+fs.writeFileSync(outputFilename,JSON.stringify(mainObject,null,4),'utf-8');
+
 });

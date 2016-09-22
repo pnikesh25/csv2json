@@ -1,190 +1,331 @@
-{
-    "Arab World": {
-        "female": 3426.093719722395,
-        "male": 3253.2314035576064
+[
+    {
+        "Country": "Arab World",
+        "Female": 62.55945321961198,
+        "YearsF": 54,
+        "Male": 59.395712117092096,
+        "YearsM": 54
     },
-    "Afghanistan": {
-        "female": 2602.4389999999994,
-        "male": 2499.8270000000007
+    {
+        "Country": "Afghanistan",
+        "Female": 47.58025925925926,
+        "YearsF": 54,
+        "Male": 45.708111111111116,
+        "YearsM": 54
     },
-    "Armenia": {
-        "female": 4038.6279999999997,
-        "male": 3687.1670000000004
+    {
+        "Country": "Armenia",
+        "Female": 73.51057407407407,
+        "YearsF": 54,
+        "Male": 67.1175,
+        "YearsM": 54
     },
-    "Azerbaijan": {
-        "female": 3807.6950000000006,
-        "male": 3415.2520000000013
+    {
+        "Country": "Azerbaijan",
+        "Female": 69.31840740740742,
+        "YearsF": 54,
+        "Male": 62.18344444444447,
+        "YearsM": 54
     },
-    "Bahrain": {
-        "female": 3889.784,
-        "male": 3720.126
+    {
+        "Country": "Bahrain",
+        "Female": 71.00725925925924,
+        "YearsF": 54,
+        "Male": 67.98485185185184,
+        "YearsM": 54
     },
-    "Bangladesh": {
-        "female": 3167.3920000000007,
-        "male": 3124.6729999999993
+    {
+        "Country": "Bangladesh",
+        "Female": 57.80074074074076,
+        "YearsF": 54,
+        "Male": 57.0213148148148,
+        "YearsM": 54
     },
-    "Bhutan": {
-        "female": 2741.8279999999995,
-        "male": 2737.8319999999994
+    {
+        "Country": "Bhutan",
+        "Female": 50.16862962962963,
+        "YearsF": 54,
+        "Male": 50.10774074074073,
+        "YearsM": 54
     },
-    "Brunei Darussalam": {
-        "female": 4012.485000000001,
-        "male": 3843.2070000000003
+    {
+        "Country": "Brunei Darussalam",
+        "Female": 73.12053703703705,
+        "YearsF": 54,
+        "Male": 70.03911111111111,
+        "YearsM": 54
     },
-    "Cambodia": {
-        "female": 2772.1550000000007,
-        "male": 2521.0190000000002
+    {
+        "Country": "Cambodia",
+        "Female": 50.54116666666667,
+        "YearsF": 54,
+        "Male": 45.95196296296297,
+        "YearsM": 54
     },
-    "China": {
-        "female": 3709.0939999999987,
-        "male": 3554.5260000000003
+    {
+        "Country": "China",
+        "Female": 67.8515185185185,
+        "YearsF": 54,
+        "Male": 65.04866666666668,
+        "YearsM": 54
     },
-    "Cyprus": {
-        "female": 4263.454,
-        "male": 4036.189
+    {
+        "Country": "Cyprus",
+        "Female": 77.6259074074074,
+        "YearsF": 54,
+        "Male": 73.49181481481482,
+        "YearsM": 54
     },
-    "Egypt Arab Rep.": {
-        "female": 3467.4900000000002,
-        "male": 3237.938
+    {
+        "Country": "Egypt Arab Rep.",
+        "Female": 63.30046296296296,
+        "YearsF": 54,
+        "Male": 59.09474074074074,
+        "YearsM": 54
     },
-    "India": {
-        "female": 3070.874,
-        "male": 3046.944
+    {
+        "Country": "India",
+        "Female": 56.11955555555554,
+        "YearsF": 54,
+        "Male": 55.64914814814816,
+        "YearsM": 54
     },
-    "Indonesia": {
-        "female": 3420.03,
-        "male": 3257.414
+    {
+        "Country": "Indonesia",
+        "Female": 62.40694444444444,
+        "YearsF": 54,
+        "Male": 59.446685185185196,
+        "YearsM": 54
     },
-    "Iran Islamic Rep.": {
-        "female": 3409.815,
-        "male": 3232.8429999999994
+    {
+        "Country": "Iran Islamic Rep.",
+        "Female": 62.327185185185186,
+        "YearsF": 54,
+        "Male": 59.02105555555554,
+        "YearsM": 54
     },
-    "Iraq": {
-        "female": 3603.793000000001,
-        "male": 3368.837
+    {
+        "Country": "Iraq",
+        "Female": 65.85614814814818,
+        "YearsF": 54,
+        "Male": 61.488129629629626,
+        "YearsM": 54
     },
-    "Israel": {
-        "female": 3966.26,
-        "male": 3787.399999999999
+    {
+        "Country": "Israel",
+        "Female": 77.85280000000002,
+        "YearsF": 50,
+        "Male": 74.33859999999999,
+        "YearsM": 50
     },
-    "Japan": {
-        "female": 4398.699999999999,
-        "male": 4084.3300000000004
+    {
+        "Country": "Japan",
+        "Female": 80.1585185185185,
+        "YearsF": 54,
+        "Male": 74.4262962962963,
+        "YearsM": 54
     },
-    "Jordan": {
-        "female": 3724.186999999999,
-        "male": 3587.153999999999
+    {
+        "Country": "Jordan",
+        "Female": 67.9863148148148,
+        "YearsF": 54,
+        "Male": 65.45737037037036,
+        "YearsM": 54
     },
-    "Kazakhstan": {
-        "female": 3864.7770000000005,
-        "male": 3297.973
+    {
+        "Country": "Kazakhstan",
+        "Female": 70.38918518518518,
+        "YearsF": 54,
+        "Male": 60.08781481481481,
+        "YearsM": 54
     },
-    "Korea Dem. Rep.": {
-        "female": 3699.441,
-        "male": 3330.6569999999997
+    {
+        "Country": "Korea Dem. Rep.",
+        "Female": 67.5107037037037,
+        "YearsF": 54,
+        "Male": 60.78209259259259,
+        "YearsM": 54
     },
-    "Korea Rep.": {
-        "female": 3978.672999999999,
-        "male": 3583.025
+    {
+        "Country": "Korea Rep.",
+        "Female": 72.65120370370369,
+        "YearsF": 54,
+        "Male": 65.41501851851852,
+        "YearsM": 54
     },
-    "Kuwait": {
-        "female": 3907.000999999999,
-        "male": 3782.483
+    {
+        "Country": "Kuwait",
+        "Female": 71.21055555555553,
+        "YearsF": 54,
+        "Male": 68.95105555555557,
+        "YearsM": 54
     },
-    "Kyrgyz Republic": {
-        "female": 3765.2509999999984,
-        "male": 3310.912
+    {
+        "Country": "Kyrgyz Republic",
+        "Female": 68.60740740740738,
+        "YearsF": 54,
+        "Male": 60.35001851851852,
+        "YearsM": 54
     },
-    "Lao PDR": {
-        "female": 2984.0810000000006,
-        "male": 2831.763000000001
+    {
+        "Country": "Lao PDR",
+        "Female": 54.42837037037038,
+        "YearsF": 54,
+        "Male": 51.67074074074075,
+        "YearsM": 54
     },
-    "Lebanon": {
-        "female": 3972.982,
-        "male": 3778.5570000000002
+    {
+        "Country": "Lebanon",
+        "Female": 72.36853703703703,
+        "YearsF": 54,
+        "Male": 68.83318518518519,
+        "YearsM": 54
     },
-    "Malaysia": {
-        "female": 3875.474999999999,
-        "male": 3695.131999999999
+    {
+        "Country": "Malaysia",
+        "Female": 70.65098148148147,
+        "YearsF": 54,
+        "Male": 67.34190740740739,
+        "YearsM": 54
     },
-    "Maldives": {
-        "female": 3183.0880000000006,
-        "male": 3180.3120000000004
+    {
+        "Country": "Maldives",
+        "Female": 58.253296296296305,
+        "YearsF": 54,
+        "Male": 58.20700000000001,
+        "YearsM": 54
     },
-    "Mongolia": {
-        "female": 3403.5620000000004,
-        "male": 3103.777
+    {
+        "Country": "Mongolia",
+        "Female": 62.090277777777786,
+        "YearsF": 54,
+        "Male": 56.622518518518504,
+        "YearsM": 54
     },
-    "Myanmar": {
-        "female": 3231.523,
-        "male": 2974.0529999999994
+    {
+        "Country": "Myanmar",
+        "Female": 58.995907407407415,
+        "YearsF": 54,
+        "Male": 54.336685185185175,
+        "YearsM": 54
     },
-    "Nepal": {
-        "female": 2879.7440000000006,
-        "male": 2808.5700000000006
+    {
+        "Country": "Nepal",
+        "Female": 52.67481481481482,
+        "YearsF": 54,
+        "Male": 51.36159259259259,
+        "YearsM": 54
     },
-    "Oman": {
-        "female": 3520.1860000000006,
-        "male": 3336.5020000000004
+    {
+        "Country": "Oman",
+        "Female": 64.38300000000002,
+        "YearsF": 54,
+        "Male": 61.0117037037037,
+        "YearsM": 54
     },
-    "Pakistan": {
-        "female": 3212.803,
-        "male": 3154.9530000000004
+    {
+        "Country": "Pakistan",
+        "Female": 58.65411111111112,
+        "YearsF": 54,
+        "Male": 57.589703703703705,
+        "YearsM": 54
     },
-    "Philippines": {
-        "female": 3641.680999999999,
-        "male": 3372.4109999999996
+    {
+        "Country": "Philippines",
+        "Female": 66.34455555555554,
+        "YearsF": 54,
+        "Male": 61.403740740740744,
+        "YearsM": 54
     },
-    "Qatar": {
-        "female": 4065.9700000000007,
-        "male": 3925.532
+    {
+        "Country": "Qatar",
+        "Female": 74.1230740740741,
+        "YearsF": 54,
+        "Male": 71.59894444444446,
+        "YearsM": 54
     },
-    "Saudi Arabia": {
-        "female": 3600.6919999999996,
-        "male": 3408.4779999999987
+    {
+        "Country": "Saudi Arabia",
+        "Female": 65.79512962962961,
+        "YearsF": 54,
+        "Male": 62.31112962962961,
+        "YearsM": 54
     },
-    "Singapore": {
-        "female": 4208.416,
-        "male": 3915.3289999999997
+    {
+        "Country": "Singapore",
+        "Female": 76.65224074074074,
+        "YearsF": 54,
+        "Male": 71.35251851851852,
+        "YearsM": 54
     },
-    "Sri Lanka": {
-        "female": 3909.6509999999994,
-        "male": 3601.474999999999
+    {
+        "Country": "Sri Lanka",
+        "Female": 71.24796296296296,
+        "YearsF": 54,
+        "Male": 65.63188888888887,
+        "YearsM": 54
     },
-    "Syrian Arab Republic": {
-        "female": 3735.488,
-        "male": 3609.165
+    {
+        "Country": "Syrian Arab Republic",
+        "Female": 68.19325925925926,
+        "YearsF": 54,
+        "Male": 65.86420370370371,
+        "YearsM": 54
     },
-    "Tajikistan": {
-        "female": 3604.789999999999,
-        "male": 3279.6340000000005
+    {
+        "Country": "Tajikistan",
+        "Female": 65.66962962962961,
+        "YearsF": 54,
+        "Male": 59.73775925925926,
+        "YearsM": 54
     },
-    "Thailand": {
-        "female": 3804.5980000000004,
-        "male": 3470.083
+    {
+        "Country": "Thailand",
+        "Female": 69.39887037037037,
+        "YearsF": 54,
+        "Male": 63.28946296296298,
+        "YearsM": 54
     },
-    "Timor-Leste": {
-        "female": 2663.6840000000007,
-        "male": 2542.3229999999994
+    {
+        "Country": "Timor-Leste",
+        "Female": 48.69211111111112,
+        "YearsF": 54,
+        "Male": 46.46575925925925,
+        "YearsM": 54
     },
-    "Turkmenistan": {
-        "female": 3579.188,
-        "male": 3166.01
+    {
+        "Country": "Turkmenistan",
+        "Female": 65.20485185185186,
+        "YearsF": 54,
+        "Male": 57.686000000000014,
+        "YearsM": 54
     },
-    "United Arab Emirates": {
-        "female": 3848.403,
-        "male": 3675.846
+    {
+        "Country": "United Arab Emirates",
+        "Female": 70.24809259259258,
+        "YearsF": 54,
+        "Male": 67.15248148148149,
+        "YearsM": 54
     },
-    "Uzbekistan": {
-        "female": 3769.1640000000007,
-        "male": 3398.544999999999
+    {
+        "Country": "Uzbekistan",
+        "Female": 68.6423888888889,
+        "YearsF": 54,
+        "Male": 61.90885185185184,
+        "YearsM": 54
     },
-    "Vietnam": {
-        "female": 3999.985,
-        "male": 3497.0740000000005
+    {
+        "Country": "Vietnam",
+        "Female": 72.91309259259259,
+        "YearsF": 54,
+        "Male": 63.73048148148148,
+        "YearsM": 54
     },
-    "Yemen Rep.": {
-        "female": 2932.7149999999997,
-        "male": 2780.051999999999
+    {
+        "Country": "Yemen Rep.",
+        "Female": 53.65124074074073,
+        "YearsF": 54,
+        "Male": 50.86696296296295,
+        "YearsM": 54
     }
-}
+]
