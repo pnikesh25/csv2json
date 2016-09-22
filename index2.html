@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+<head>
+	<style>
+  .bar{
+    fill: brown;
+  }
+  .bar:hover{
+    fill: red;
+  }
+	.axis {
+	  font: 10px sans-serif;
+	}
+	.axis path,
+	.axis line {
+	  fill: none;
+	  stroke: #000;
+	  shape-rendering: crispEdges;
+	}
+	.d3-tip {
+  line-height: 1;
+  font-weight: bold;
+  padding: 12px;
+  background: rgba(201, 200, 200, 0.8);
+  color: #fff;
+  border-radius: 2px;
+}
+/* Creates a small triangle extender for the tooltip */
+.d3-tip:after {
+  box-sizing: border-box;
+  display: inline;
+  font-size: 10px;
+  width: 100%;
+  line-height: 1;
+  color: rgba(201, 200, 200, 0.8);
+  content: "\25BC";
+  position: absolute;
+  text-align: center;
+}
+/* Style northward tooltips differently */
+.d3-tip.n:after {
+  margin: -1px 0 0 0;
+  top: 100%;
+  left: 0;
+}
+	</style>
+</head>
+
+<body>
+
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
+
+<script>
+// set the dimensions of the canvas
+var margin = {top: 40, right: 20, bottom: 90, left: 80},
+    width = 1000 - margin.left - margin.right,
+    height = 500 - margin.top - margin.bottom;
+// set the ranges
+var x = d3.scale.ordinal().rangeRoundBands([0, width], .5);
+var y = d3.scale.linear().range([height, 0]);
+// define the axis
+var xAxis = d3.svg.axis()
+    .scale(x)
+    .orient("bottom")
+var yAxis = d3.svg.axis()
+    .scale(y)
+    .orient("left")
+    .ticks(10);
+var tip = d3.tip()
+		  .attr('class', 'd3-tip')
+		  .offset([-10, 0])
+		  .html(function(d) {
+		    return "<span style='color:red'>" + d["Total"].toFixed(2) + "</span>";
+		  })
+// add the SVG element
+var svg = d3.select("body").append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform",
+          "translate(" + margin.left + "," + margin.top + ")");
+svg.call(tip);
+// load the data
+d3.json("outputjson2.json", function(error, data) {
+  // scale the range of the data
+  x.domain(data.map(function(d) { return d["Country"]; }));
+  y.domain([d3.min(data, function(d) { return d["Total"]-0.5; }), d3.max(data, function(d) { return d["Total"]+1; })]);
+  // add axis
+  svg.append("g")
+      .attr("class", "x axis")
+      .attr("transform", "translate(0," + height + ")")
+      .call(xAxis)
+			.append("text")
+					//.attr("transform", "rotate(-90)")
+					.attr("x", width/2)
+					.attr("dx", "2em")
+					.attr("y", "4em")
+					.attr("dy", ".71em")
+					.style("text-anchor", "end")
+					.style("font-size" , "12px")
+					.style("text-decoration", "bold")
+					.text("Countries")
+    .selectAll("text")
+      .style("text-anchor", "end")
+			.attr("dx", "2em")
+      .attr("dy", "2em");
+
+
+  svg.append("g")
+      .attr("class", "y axis")
+      .call(yAxis)
+    .append("text")
+      .attr("transform", "rotate(-90)")
+			.attr("x", 0-height/2)
+			.attr("dx", "5em")
+      .attr("y", "-4em")
+      .attr("dy", ".71em")
+      .style("text-anchor", "end")
+			.style("font-size" , "12px")
+			.style("text-decoration", "bold")
+      .text("Average Life Expectancy at birth");
+  // Add bar chart
+  svg.selectAll("bar")
+      .data(data)
+    .enter().append("rect")
+      .attr("class", "bar")
+      .attr("x", function(d) { return x(d["Country"]); })
+      .attr("width", x.rangeBand())
+      .attr("y", function(d) { return y(d["Total"]); })
+      .attr("height", function(d) { return height - y(d["Total"]); })
+			.on('mouseover', tip.show)
+      .on('mouseout', tip.hide);
+// Heading of the chart
+			svg.append("text")
+			  .attr("x", (width/2))
+				.attr("y", 0-(margin.top/2))
+				.attr("text-anchor", "middle")
+				.style("font-size", "20px")
+				.style("text-decoration", "bold")
+				.text("Life Expectancy(Top 5 Countries)");
+});
+</script>
+
+</body>
